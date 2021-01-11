@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
+import { NavbarComponent } from "./components/navbar/navbar.component";
 import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { MovieComponent } from "./components/movie/movie.component";
@@ -9,6 +10,7 @@ import { MovieListComponent } from "./components/movie-list/movie-list.component
 export const COMPONENTS = [
   MovieListComponent,
   MovieComponent,
+  NavbarComponent,
   LoginComponent,
   RegisterComponent,
 ];

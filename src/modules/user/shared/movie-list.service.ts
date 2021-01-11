@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class ItemsService {
+export class MovieListService {
   getItems() {
     return ITEMS;
   }
