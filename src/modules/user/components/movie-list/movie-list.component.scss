@@ -3,4 +3,21 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: auto;
   grid-gap: 1rem;
+
+  .card {
+    position: relative;
+    svg {
+      position: absolute;
+      right: 5%;
+      top: 5%;
+
+      .inner.is-favourite:hover {
+        fill: transparent;
+      }
+
+      .inner.not-favourite:hover {
+        fill: #ecf602;
+      }
+    }
+  }
 }

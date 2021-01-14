@@ -19,20 +19,18 @@ const routes: Routes = [
   {
     path: "",
     component: MovieListComponent,
-    children: [
-      {
-        path: "movie",
-        component: MovieComponent,
-      },
-      {
-        path: "login",
-        component: LoginComponent,
-      },
-      {
-        path: "register",
-        component: RegisterComponent,
-      },
-    ],
+  },
+  {
+    path: "movie",
+    component: MovieComponent,
+  },
+  {
+    path: "login",
+    component: LoginComponent,
+  },
+  {
+    path: "register",
+    component: RegisterComponent,
   },
 ];
 
