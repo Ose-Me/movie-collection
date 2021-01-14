@@ -13,3 +13,67 @@ body {
   color: #d6d7da;
   min-height: 100vh;
 }
+
+a {
+  color: #663da7;
+  font-weight: 600;
+}
+
+.logo {
+  color: #7ea73d;
+  font-size: 1.5rem;
+
+  span {
+    color: #663da7;
+    font-weight: 800;
+  }
+}
+
+.btn-full {
+  background-color: #663da7;
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-full:hover {
+  background-color: #7f56c1;
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn-light {
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+}
+
+.btn-light:hover {
+  border-color: #7f56c1;
+  background-color: transparent;
+  color: #7f56c1;
+}
+
+.card-container {
+  min-height: 100vh;
+}
+
+.input {
+  max-width: 300px;
+  width: 100%;
+  // font-size: 0.8rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  margin-top: 0.8rem;
+  font-weight: 500;
+}
+
+.checkbox,
+.radio {
+  font-size: 0.8rem;
+}
+
+.redirect {
+  font-size: 0.8rem;
+}

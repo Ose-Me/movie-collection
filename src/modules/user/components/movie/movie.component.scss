@@ -1,0 +1,23 @@
+h1 {
+  font-size: 2rem;
+}
+.download {
+  width: 100%;
+}
+
+.genre {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #663da7;
+  margin-right: 0.5rem;
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+.movie-tag {
+  font-size: 0.9rem;
+
+  .left {
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+}
