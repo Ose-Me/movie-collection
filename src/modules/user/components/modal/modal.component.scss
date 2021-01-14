@@ -9,6 +9,9 @@ app-modal {
     right: 0;
     bottom: 0;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     /* z-index must be higher than .jw-modal-background */
     z-index: 1000;
@@ -17,8 +20,7 @@ app-modal {
     overflow: auto;
 
     .jw-modal-body {
-      // padding: 20px;
-      background: #fff;
+      background: transparent;
 
       /* margin exposes part of the modal background */
       margin: 40px;
