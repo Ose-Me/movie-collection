@@ -1,8 +1,17 @@
 h1 {
   font-size: 2rem;
 }
+
+img {
+  object-fit: cover;
+}
+
 .download {
   width: 100%;
+}
+
+.thumbnail {
+  width: 250px;
 }
 
 .genre {

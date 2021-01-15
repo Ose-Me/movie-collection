@@ -2,11 +2,30 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: auto;
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
 
   .card {
     position: relative;
-    background-color: transparent;
+    background-color: #0000002e;
+
+    img {
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 0.9rem;
+      color: #d6d7da;
+    }
+
+    .name:hover {
+      color: #ecf602;
+    }
+
+    .year {
+      color: #663da7;
+      font-size: 0.8rem;
+    }
+
     svg {
       position: absolute;
       right: 5%;
