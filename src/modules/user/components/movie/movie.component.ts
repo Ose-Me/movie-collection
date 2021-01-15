@@ -15,7 +15,7 @@ export class MovieComponent implements OnInit {
   sub;
   id;
   movie;
-  loading;
+  loading: boolean = true;
   showVideo: boolean;
   budget: CurrencyPipe;
 
@@ -34,6 +34,7 @@ export class MovieComponent implements OnInit {
       this.movieService
         .getMovie(this.id)
         .then((data: any) => {
+          this.loading = false;
           this.movie = data;
           this.budget = this.movie.budget
             .toString()
@@ -41,6 +42,7 @@ export class MovieComponent implements OnInit {
         })
         .catch((error) => {
           console.log(error);
+          this.loading = false;
         });
     });
   }

@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <!-- loader-->
-<div class="loader-wrapper" *ngIf="!movie">
+<div class="loader-wrapper" *ngIf="loading">
     <div class="loader is-loading"></div>
 </div>
 
@@ -24,7 +24,7 @@
             </p>
             <div class="my-5">
                 <h2><b>Synopsis</b></h2>
-                <p>{{movie.overview}}</p>
+                <p>{{movie?.overview}}</p>
             </div>
             <p class="movie-tag">
                 <span class="left">Ratings:</span>
@@ -39,10 +39,11 @@
             <p class="movie-tag"><span class="left">Status: </span><b></b> <span>{{movie.status}}</span></p>
 
             <div class="card-image" (click)="openModal('custom-modal-1')">
-                <figure class="image is-1x1">
+                <figure class="image is-1x1 youtube-player">
                     <img [src]="movie.backdropPath" class="thumbnail mt-4" alt="Placeholder image">
+
+                    <img src="../../../../assets/icons/youtube.svg" alt="" id="youtube-icon">
                 </figure>
-                <img src="../../../../assets/icons/youtube.svg" alt="">
             </div>
 
             <!-- modal for embeded youtube video -->

@@ -1,4 +1,9 @@
 <app-navbar></app-navbar>
+
+<!-- loader-->
+<div class="loader-wrapper" *ngIf="loading">
+    <div class="loader is-loading"></div>
+</div>
 <div class="container">
     <div class="cards py-5">
         <div class="card" *ngFor="let movie of movies">

@@ -8,15 +8,18 @@ import { MovieListService } from "../../services/movie-list.service";
 })
 export class MovieListComponent implements OnInit {
   movies: any;
+  loading: boolean = true;
 
   constructor(private movieListService: MovieListService) {
     this.movies = this.movieListService
       .getMovies()
       .then((data: any) => {
         this.movies = data.content;
+        this.loading = false;
       })
       .catch((error) => {
         console.log(error);
+        this.loading = false;
       });
   }
 
