@@ -1,10 +1,11 @@
 # MovieCollection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2. A demonstration video of how the app works is found at the root folder as MovieCollection.mp4
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2. A demonstration video of how the app works is found at the root folder as MovieCollection.mp4 .
+NOTE:Favourite functionality is still yet to be implemented
 
 ## Install dependencies
 
-Run `npm install` or `yarn install` to install dependenciies.
+Run `npm install` or `yarn install` to install dependencies.
 
 ## Development server
 
