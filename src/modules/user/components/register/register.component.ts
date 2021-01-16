@@ -14,9 +14,6 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   loading: boolean = false;
   submitted: boolean = false;
-  success: boolean = false;
-  error: boolean = false;
-  errormessage: String;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -61,7 +58,6 @@ export class RegisterComponent implements OnInit {
       .catch((error) => {
         console.log(error);
         this.loading = false;
-        this.errormessage = error.error;
 
         // show error toastr message
         this.toastr.error(error.error, "An error occured");

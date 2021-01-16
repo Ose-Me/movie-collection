@@ -1,61 +1,48 @@
 <div class="container">
     <div class="card-container is-flex is-justify-content-center is-align-items-center">
         <div class="card p-5">
-            <a class="logo" href="">
+            <a id="logo" href="">
                 <h1>Movie<span>CO</span></h1>
             </a>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email input">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-envelope"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </span>
-                </div>
-                <!-- <p class="help is-danger">This email is invalid</p> -->
-            </div>
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="username" formControlName="username">
+                    </div>
 
-            <div class="field">
-                <label class="label">Password</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="Enter Password">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-user"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                    </span>
-                </div>
-            </div>
-
-
-
-            <div class="field m-0">
-                <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        Remember me
-                    </label>
-                </div>
-            </div>
-
-            <div class="field">
-                <span class="redirect">New to MoviesCo? <a routerLink='/register' routerLinkActive='active'>sign up
-                    </a></span>
-            </div>
-
-
-            <div class="field is-centered">
-                <div class="control">
-                    <div class="buttons is-centered">
-                        <button class="button btn-full">Log in</button>
+                    <div *ngIf="submitted && f.username.errors" class="help is-danger">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
                     </div>
                 </div>
-            </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control has-icons-right">
+                        <input class="input" type="password" placeholder="Enter Password" formControlName="password">
+
+                    </div>
+                    <div *ngIf="submitted && f.password.errors" class="help is-danger">
+                        <div *ngIf="f.password.errors.required">password is required</div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <span class="redirect">New to MoviesCo? <a routerLink='/register' routerLinkActive='active'>sign up
+                        </a></span>
+                </div>
+
+                <div class="field is-centered">
+                    <div class="control">
+                        <div class="buttons is-centered">
+                            <button class="button btn-full" type="submit" [disabled]="loading"
+                                [ngClass]="{ 'is-loading': loading }">
+                                Login</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

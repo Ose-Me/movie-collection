@@ -12,8 +12,9 @@
                     <img [src]="movie.posterPath" alt="Placeholder image">
                 </figure>
             </div>
+
             <!-- isFavourite svg icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            <svg *ngIf="loggedIn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="25" height="25" x="0" y="0"
                 viewBox="0 0 480 480" style="enable-background:new 0 0 25 25" xml:space="preserve" class="">
                 <g>
@@ -27,7 +28,7 @@
             </svg>
 
             <!-- is not favourite svg icon -->
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            <svg *ngIf="loggedIn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="25" height="25" x="0" y="0"
                 viewBox="0 0 480 480" style="enable-background:new 0 0 25 25" xml:space="preserve" class="">
                 <g>

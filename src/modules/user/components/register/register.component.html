@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card-container is-flex is-justify-content-center is-align-items-center">
         <div class="card p-5">
-            <a class="logo" href="">
+            <a id="logo" href="">
                 <h1>Movie<span>CO</span></h1>
             </a>
             <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -42,7 +42,7 @@
                 <div class="field">
                     <label class="label">Password</label>
                     <div class="control has-icons-right">
-                        <input class="input" type="text" placeholder="Enter Password" formControlName="password">
+                        <input class="input" type="password" placeholder="Enter Password" formControlName="password">
 
                     </div>
                     <div *ngIf="submitted && f.password.errors" class="help is-danger">

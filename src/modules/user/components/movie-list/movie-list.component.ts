@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MovieListService } from "../../services/movie-list.service";
+import { LoginService } from "../../services/login.service";
 
 @Component({
   selector: "app-movie-list",
@@ -9,8 +10,13 @@ import { MovieListService } from "../../services/movie-list.service";
 export class MovieListComponent implements OnInit {
   movies: any;
   loading: boolean = true;
+  user: any;
+  loggedIn: boolean;
 
-  constructor(private movieListService: MovieListService) {
+  constructor(
+    private movieListService: MovieListService,
+    private loginService: LoginService
+  ) {
     this.movies = this.movieListService
       .getMovies()
       .then((data: any) => {
@@ -23,5 +29,11 @@ export class MovieListComponent implements OnInit {
       });
   }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.loggedIn = this.loginService.isLoggedIn();
+  }
+
+  logout() {
+    this.loginService.logout();
+  }
 }
