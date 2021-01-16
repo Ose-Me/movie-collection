@@ -4,64 +4,70 @@
             <a class="logo" href="">
                 <h1>Movie<span>CO</span></h1>
             </a>
-            <div class="field">
-                <label class="label">Name</label>
-                <div class="control">
-                    <input class="input" type="text" placeholder="Text input">
-                </div>
-            </div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="field">
+                    <label class="label">First Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="first name" formControlName="firstName">
+                    </div>
 
-            <div class="field">
-                <label class="label">Email</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="email" placeholder="Email input">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-envelope"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                        <i class="fas fa-exclamation-triangle"></i>
-                    </span>
-                </div>
-                <!-- <p class="help is-danger">This email is invalid</p> -->
-            </div>
-
-            <div class="field">
-                <label class="label">Password</label>
-                <div class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" placeholder="Enter Password">
-                    <span class="icon is-small is-left">
-                        <i class="fas fa-user"></i>
-                    </span>
-                    <span class="icon is-small is-right">
-                        <i class="fas fa-check"></i>
-                    </span>
-                </div>
-            </div>
-
-
-
-            <div class="field m-0">
-                <div class="control">
-                    <label class="checkbox">
-                        <input type="checkbox">
-                        I agree to the <a href="#">terms and conditions</a>
-                    </label>
-                </div>
-            </div>
-
-            <div class="field">
-                <span class="redirect">Already have an account? <a routerLink='/login' routerLinkActive='active'>sign in
-                    </a></span>
-
-            </div>
-
-            <div class="field is-centered">
-                <div class="control">
-                    <div class="buttons is-centered">
-                        <button class="button btn-full">Sign up</button>
+                    <!-- error message -->
+                    <div *ngIf="submitted && f.firstName.errors" class="help is-danger">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
                     </div>
                 </div>
-            </div>
+
+                <div class="field">
+                    <label class="label">Last Name</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="last name" formControlName="lastName">
+                    </div>
+
+                    <div *ngIf="submitted && f.lastName.errors" class="help is-danger">
+                        <div *ngIf="f.lastName.errors.required">last Name is required</div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="username" formControlName="username">
+                    </div>
+
+                    <div *ngIf="submitted && f.username.errors" class="help is-danger">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control has-icons-right">
+                        <input class="input" type="text" placeholder="Enter Password" formControlName="password">
+
+                    </div>
+                    <div *ngIf="submitted && f.password.errors" class="help is-danger">
+                        <div *ngIf="f.password.errors.required">password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <span class="redirect">Already have an account? <a routerLink='/login'
+                            routerLinkActive='active'>sign in
+                        </a></span>
+
+                </div>
+
+                <div class="field is-centered">
+                    <div class="control">
+                        <div class="buttons is-centered">
+                            <button class="button btn-full" type="submit" [disabled]="loading"
+                                [ngClass]="{ 'is-loading': loading }">
+                                Sign up</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

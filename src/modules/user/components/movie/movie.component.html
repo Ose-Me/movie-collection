@@ -28,19 +28,19 @@
             </div>
             <p class="movie-tag">
                 <span class="left">Ratings:</span>
-                <span> {{movie.voteAverage}}
+                <span> {{movie?.voteAverage}}
                 </span>/10
                 <span><img src="../../../../assets/icons/star.svg" alt=""></span>
             </p>
-            <p class="movie-tag"><span class="left">Runtime: </span><b></b> <span>{{movie.runtime}}</span>mins</p>
+            <p class="movie-tag"><span class="left">Runtime: </span><b></b> <span>{{movie?.runtime}}</span>mins</p>
             <!-- format budget value with regex -->
             <p class="movie-tag"><span class="left">Budget:
                 </span><b></b><span>${{budget}}</span></p>
-            <p class="movie-tag"><span class="left">Status: </span><b></b> <span>{{movie.status}}</span></p>
+            <p class="movie-tag"><span class="left">Status: </span><b></b> <span>{{movie?.status}}</span></p>
 
             <div class="card-image" (click)="openModal('custom-modal-1')">
                 <figure class="image is-1x1 youtube-player">
-                    <img [src]="movie.backdropPath" class="thumbnail mt-4" alt="Placeholder image">
+                    <img [src]="movie?.backdropPath" class="thumbnail mt-4" alt="Placeholder image">
 
                     <img src="../../../../assets/icons/youtube.svg" alt="" id="youtube-icon">
                 </figure>
